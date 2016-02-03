@@ -1,3 +1,4 @@
+
 import * as table from "./tsTable";
 
 let data = [{"id":1,"gender":"Male","first_name":"Aaron","last_name":"Shaw","email":"ashaw0@pen.io","ip_address":"154.170.161.239","company_name":"Nlounge","balance":"441997.89","currency":"NGN","date":"1432115629"},

@@ -2,3 +2,7 @@ node_modules/
 jspm_packages/
 typings/
 *.js.map
+
+*/app/*.js
+
+.idea/
