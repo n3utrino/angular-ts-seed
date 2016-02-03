@@ -1,0 +1,22 @@
+{
+  "name": "ts-table",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "jasmine-core": "2.4.1",
+    "jspm": "^0.16.26"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "jspm": {
+    "configFile": "src/config.js",
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.5.0-rc.2"
+    },
+    "devDependencies": {}
+  }
+}

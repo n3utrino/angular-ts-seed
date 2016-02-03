@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Table Render View</title>
+</head>
+<body>
+<!-- #1. add the system.js library -->
+<script src="../jspm_packages/system.js"></script>
+<script src="dev.system.config.js"></script>
+<script>
+
+    // #3. Import the spec file explicitly
+    System.import('app/tableApp.js');
+</script>
+<div ng-app="table">
+
+    <div ng-controller="TableController as tableCtrl">
+
+        {{tableCtrl.itsMe}}
+
+    </div>
+</div>
+
+
+</body>
+</html>
