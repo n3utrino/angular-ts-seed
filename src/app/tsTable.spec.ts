@@ -1,5 +1,6 @@
 
 import * as table from "./tsTable";
+import {ITableColumn} from "./tsTable";
 
 let data = [{"id":1,"gender":"Male","first_name":"Aaron","last_name":"Shaw","email":"ashaw0@pen.io","ip_address":"154.170.161.239","company_name":"Nlounge","balance":"441997.89","currency":"NGN","date":"1432115629"},
     {"id":2,"gender":"Female","first_name":"Nicole","last_name":"Reyes","email":"nreyes1@squidoo.com","ip_address":"138.255.215.247","company_name":"Dynazzy","balance":"369265.08","currency":"PHP","date":"1424741570"},
@@ -1002,13 +1003,27 @@ let data = [{"id":1,"gender":"Male","first_name":"Aaron","last_name":"Shaw","ema
     {"id":999,"gender":"Male","first_name":"Juan","last_name":"Robinson","email":"jrobinsonrq@google.fr","ip_address":"92.178.7.136","company_name":"Eayo","balance":"282485.05","currency":"SAR","date":"1444818473"},
     {"id":1000,"gender":"Male","first_name":"Jerry","last_name":"Gonzalez","email":"jgonzalezrr@guardian.co.uk","ip_address":"177.162.95.161","company_name":"Trupe","balance":"763457.99","currency":"BRL","date":"1446479984"}];
 
+
+let cols:ITableColumn[] = [{title:"Name"},{title:"email"},{title:"IP"},{title:"Date"}];
+
 describe('table model test', () => {
 
-    let cols = ["Name","email","IP","Date"];
     let peopleTable = new table.DefaultTable(data,cols);
 
     it('column count equals cols',()=> expect(peopleTable.tableModel.getColumnCount()).toEqual(cols.length));
     it('modelcount equals data', () => expect(data.length).toEqual(peopleTable.tableModel.getRowCount()));
+});
+
+describe('table sort test', () => {
+
+    let peopleTable = new table.DefaultTable(data,cols);
+
+    peopleTable.tableModel.sortColumn(0);
+    it('column 0 is sorted asc',()=>expect(peopleTable.tableModel.cols[0].sort).toEqual(0));
+    peopleTable.tableModel.sortColumn(0);
+    it('column 0 is sorted desc',()=>expect(peopleTable.tableModel.cols[0].sort).toEqual(1));
+
+
 });
 
 

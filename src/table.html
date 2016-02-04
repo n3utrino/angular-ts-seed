@@ -1,6 +1,9 @@
 <html>
 <head>
     <title>Table Render View</title>
+
+    <link rel="stylesheet" href="../jspm_packages/npm/foundation-sites@6.1.2/dist/foundation.css">
+
 </head>
 <body>
 <!-- #1. add the system.js library -->
@@ -13,13 +16,23 @@
 </script>
 <div ng-app="table">
 
-    <div ng-controller="TableController as tableCtrl">
+    <div ng-controller="UserDataViewController as userDataCtl">
 
-        {{tableCtrl.itsMe}}
+        {{userDataCtl.tableModel}}
 
+        <div class="button" ng-click="userDataCtl.addData()">Mehr</div>
+        <button class="button" ng-click="userDataCtl.removeData()">Weniger</button>
+
+
+    <ts-table
+            table-data="userDataCtl.data"
+            table-config="userDataCtl.tableConfig"
+            table-model="userDataCtl.tableModel"
+
+    ></ts-table>
     </div>
-</div>
 
+</div>
 
 </body>
 </html>

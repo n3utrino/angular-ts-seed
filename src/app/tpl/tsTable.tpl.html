@@ -1,0 +1,9 @@
+<table>
+    <thead>
+    <tr>
+        <th width="{{col.width}}" ng-click="tableCtrl.table.tableModel.sortColumn($index)" ng-repeat="col in tableCtrl.table.tableModel.cols">{{col.title}}</th>
+    </tr>
+    </thead>
+    <tbody ng-include="tableCtrl.table.rowTemplateUrl">
+    </tbody>
+</table>

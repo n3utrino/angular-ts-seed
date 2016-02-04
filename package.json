@@ -15,7 +15,8 @@
   "jspm": {
     "configFile": "src/config.js",
     "dependencies": {
-      "angular": "github:angular/bower-angular@^1.5.0-rc.2"
+      "angular": "github:angular/bower-angular@^1.5.0-rc.2",
+      "foundation": "npm:foundation-sites@^6.1.2"
     },
     "devDependencies": {}
   }
